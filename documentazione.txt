@@ -1,0 +1,69 @@
+Angular CLI - Common Language Interface
+
+TypeScript -> Javascript
+SCSS -> CSS 
+
+SPA - Single Page Application
+
+DEV - ambiente di sviluppo, PC del dev
+  indirizzo del BE (BackEnd) - http://localhost:4200
+TEST - ambiente di testing, usato dai test analyst per verificare la funzionalita' dell'app
+  indirizzo del BE (BackEnd) - http://text.miazeinda.it
+RC - Release Candidate, ambiente pre produzione, usato per fare i test di integrazione con altri software
+  indirizzo del BE (BackEnd) - http://rc.miazeinda.it
+PROD - ambiente di produzione, ambiente LIVE, ambiente che usano utenti della tua azienda.altri
+  indirizzo del BE (BackEnd) - http://miazeinda.it
+
+Filosofia di Angular:
+  Modulo - insieme di componenti, serve per separare le funzionalita' di una applicazione in piu' moduli, per facilitare la gestione e manutenzione delle app SPA           
+  Componente - e' una parte della tua applicazione, una parte di una funzionalita' (per esempio Lista Clienti, Dettaglio Cliente, Cambio Indirizzo Cliente)
+  Servizio - classi per condividere la logica con piu' componenti (es. Servizio Cliente usato da piu' componenti)
+            usati anche per iterazizoni con il BE, chiamate alle API REST, scambio di dati in formato JSON 
+  Template - la view (la porzione HTML) che mostriamo all'utente nel browser
+             un componente ha sembre un suo template 
+  Direttive - servono per aggiungere delle funzionalita' custom nei template HTML
+  Pipe - servono per formattare i dati a livello di template HTML 
+  Rotte - servono per caricare diversi template (componenti) nella nostra SPA 
+  Gestione dipendenze - noto come Dependency Injection (iniezzione delle dipendenze nei vari componenti angular)
+  
+Progetto gestione prodotti:
+  visualizzazione menu per poter aprire la pagina di benvenuto e la pagina elenco prodotti
+  pagina di benvenuto 
+  pagina che mostra elenco prodotti
+     la lista di prodotti
+     filtro della lista di prodotti per la descrizione
+     apertura dettaglio prodotto
+     manipolazione della lista prodotti dalla pagina principale 
+  la lista di prodotti la recuperiamo da un file JSON presente nella nostra applicazione 
+
+Possiamo scambiare i dati tra il FE e BE usando due formati
+* XML
+   <prodotti>
+    <prodotto codice="123" descrizione="Prodotto X">    
+    </prodotto>
+   </prodotti>
+* JSON
+  [
+    {
+      codice: "123",
+      descrizione: "Prodotto X"
+    },
+    {
+      codice: "456",
+      descrizione: "Prodotto Y"
+    }
+  ]
+
+Per caricare i dati in formato JSON dal BE noi chiamiamo i servizi REST
+  REST si basa sul protocollo HTTP 
+  abbiamo diversi tipologie di chiamate REST che possiamo fare dal FE al BE:
+    1. Chiamata HTTP di tipo GET - serve per scaricare i dati dal BE, recuperare dati dal BE
+       es. HTTP GET http://localhost:8080/prodotti - i dati che ricevi sono in formato JSON e si trovano nel payload della risposta HTTP 
+    2. Chiamata HTTP di tipo POST - serve per inviare i dati dal FE al BE 
+       es. HTTP POST http://localhost:8080/prodotti
+       i dati da creare a BE sono passati nel corpo (body) della chiamata HTTP
+    3. Chiamata HTTP di tipo PUT - serve per modificare i dati a BE 
+       es. HTTP PUT http://localhost:8080/prodotti/123
+       i dati da creare a BE sono passati nel corpo (body) della chiamata HTTP
+    4. Chiamata HTTP di tipo DELETE - serve per elimire un dato a BE 
+       es. HTTP DELETE http://localhost:8080/prodotti/123
