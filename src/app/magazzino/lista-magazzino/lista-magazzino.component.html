@@ -1,0 +1,41 @@
+<div class='card'>
+    <div class='card-header'>
+      {{ titolo }}
+    </div>
+    <div class='card-body'>
+      <div class='row'>
+        <div class='col-md-2'>Filter by:</div>
+        <div class='col-md-4'>
+          <input type='text' />
+        </div>
+      </div>
+      <div class='table-responsive'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>
+              </th>
+              <th>Product</th>
+              <th>Quantità</th>
+              <th>Capannone</th>
+              <th>Scaffale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let datoMagazzino of datiMagazzino'>
+              <td>
+              </td>
+              <td>
+                <a [routerLink]="['/products', datoMagazzino.idMerce]">
+                  {{ datoMagazzino.nomeProdotto }}
+                </a>
+              </td>
+              <td>{{ datoMagazzino.quantita }}</td>
+              <td>{{ datoMagazzino.capannone }}</td>
+              <td>{{ datoMagazzino.scaffale }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
