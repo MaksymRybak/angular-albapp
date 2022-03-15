@@ -1,10 +1,11 @@
-<nav class='navbar navbar-expand navbar-light bg-light'>
-  <a class='navbar-brand'>{{ title }}</a>
+<nav class='navbar navbar-expand navbar-dark bg-dark'>
+  <img src="../assets/images/logo.nav.png" alt="">
   <ul class='nav nav-pills'>
     <li><a class='nav-link' routerLink='/welcome'>Home</a></li>
     <li><a class='nav-link' routerLink='/products'>Product List</a></li>
+    <li><a class='nav-link' routerLink='/warehouse'>Warehouse</a></li>
   </ul>
 </nav>
-<div class='container'>
+<div class='container mt-5'>
   <router-outlet></router-outlet>
 </div>

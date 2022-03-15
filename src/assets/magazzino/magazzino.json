@@ -1,0 +1,37 @@
+[
+    {
+        "idMerce": 1,
+        "nomeProdotto": "Leaf Rake",
+        "quantita": 100,
+        "capannone": "A-1",
+        "scaffale": "54-e"
+    },
+    {
+        "idMerce": 2,
+        "nomeProdotto": "Garden Cart",
+        "quantita": 89,
+        "capannone": "C-22",
+        "scaffale": "12-s"
+    },
+    {
+        "idMerce": 3,
+        "nomeProdotto": "Hammer",
+        "quantita": 1258,
+        "capannone": "D-E",
+        "scaffale": "21-a"
+    },
+    {
+        "idMerce": 4,
+        "nomeProdotto": "Saw",
+        "quantita": 23,
+        "capannone": "A-1",
+        "scaffale": "64-d"
+    },
+    {
+        "idMerce": 5,
+        "nomeProdotto": "Video Game Controller",
+        "quantita": 64,
+        "capannone": "C-8",
+        "scaffale": "82-a"
+    }
+  ]

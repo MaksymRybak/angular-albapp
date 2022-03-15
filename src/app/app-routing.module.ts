@@ -1,3 +1,4 @@
+import { ListaMagazzinoComponent } from './magazzino/lista-magazzino/lista-magazzino.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './home/welcome/welcome.component';
@@ -6,8 +7,9 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'products', component: ProductListComponent },
+  { path: 'warehouse', component: ListaMagazzinoComponent},
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-  { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+  { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
 ];
 
 @NgModule({
