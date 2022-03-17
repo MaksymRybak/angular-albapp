@@ -8,6 +8,7 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ListaMagazzinoComponent } from './magazzino/lista-magazzino/lista-magazzino.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { MagazzinoDettagliComponent } from './magazzino/magazzino-dettagli/magazzino-dettagli.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
     WelcomeComponent,
     ProductListComponent,
     ListaMagazzinoComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    MagazzinoDettagliComponent
   ],
   imports: [
     BrowserModule,

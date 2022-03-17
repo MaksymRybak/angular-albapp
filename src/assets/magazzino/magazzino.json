@@ -4,34 +4,49 @@
         "nomeProdotto": "Leaf Rake",
         "quantita": 100,
         "capannone": "A-1",
-        "scaffale": "54-e"
+        "scaffale": "54-e",
+        "peso": "6 Kg",
+        "materiale": "Acciao e legno",
+        "imballagio": false
     },
     {
         "idMerce": 2,
         "nomeProdotto": "Garden Cart",
         "quantita": 89,
         "capannone": "C-22",
-        "scaffale": "12-s"
+        "scaffale": "12-s",
+        "peso": "15 Kg",
+        "materiale": "Acciao",
+        "imballagio": false
     },
     {
         "idMerce": 3,
         "nomeProdotto": "Hammer",
         "quantita": 1258,
         "capannone": "D-E",
-        "scaffale": "21-a"
+        "scaffale": "21-a",
+        "peso": "4 Kg",
+        "materiale": "Acciao e legno",
+        "imballagio": true
     },
     {
         "idMerce": 4,
         "nomeProdotto": "Saw",
         "quantita": 23,
         "capannone": "A-1",
-        "scaffale": "64-d"
+        "scaffale": "64-d",
+        "peso": "5 Kg",
+        "materiale": "Acciao e plastica",
+        "imballagio": true
     },
     {
         "idMerce": 5,
         "nomeProdotto": "Video Game Controller",
         "quantita": 64,
         "capannone": "C-8",
-        "scaffale": "82-a"
+        "scaffale": "82-a",
+        "peso": "1 Kg",
+        "materiale": "plastica",
+        "imballagio": false
     }
   ]

@@ -4,4 +4,7 @@ export interface Imagazzino {
     quantita: number;
     capannone: string;
     scaffale: string;
+    peso: string;
+    materiale: string;
+    imballagio: boolean;
 }
