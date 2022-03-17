@@ -13,8 +13,18 @@ export class ListaMagazzinoComponent implements OnInit, OnDestroy {
   titolo: string = 'Warehouse';
   errorMessage = '';
 
-  datiMagazzino : Imagazzino[] = [];
+  datiMagazzino: Imagazzino[] = [];
+  datiMagazzinoFiltrati: Imagazzino[] = [];
   subscription!: Subscription;
+
+  private _listFilter = '';
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.datiMagazzinoFiltrati = this.performFilter(value);
+  }
 
   constructor(private magazzinoService: MagazzinoService) { }
 
@@ -22,6 +32,7 @@ export class ListaMagazzinoComponent implements OnInit, OnDestroy {
     this.subscription = this.magazzinoService.getDatiMagazzino().subscribe({
       next: datiMagazzino => {
         this.datiMagazzino = datiMagazzino;
+        this.datiMagazzinoFiltrati = datiMagazzino;
       },
       error: err => this.errorMessage = err
     });
@@ -29,5 +40,10 @@ export class ListaMagazzinoComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  performFilter(filterBy: string): Imagazzino[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.datiMagazzino.filter((magazzino: Imagazzino) => magazzino.nomeProdotto.toLocaleLowerCase().includes(filterBy));
   }
 }
