@@ -9,6 +9,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ListaMagazzinoComponent } from './magazzino/lista-magazzino/lista-magazzino.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { MagazzinoDettagliComponent } from './magazzino/magazzino-dettagli/magazzino-dettagli.component';
+import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MagazzinoDettagliComponent } from './magazzino/magazzino-dettagli/magaz
     ProductListComponent,
     ListaMagazzinoComponent,
     ProductDetailsComponent,
-    MagazzinoDettagliComponent
+    MagazzinoDettagliComponent,
+    ConvertToSpacesPipe
   ],
   imports: [
     BrowserModule,
