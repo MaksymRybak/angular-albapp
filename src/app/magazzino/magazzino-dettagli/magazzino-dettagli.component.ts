@@ -1,5 +1,5 @@
 import { MagazzinoService } from './../magazzino.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Imagazzino } from './../magazino';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,7 +16,9 @@ export class MagazzinoDettagliComponent implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute, private MagazzinoService: MagazzinoService) {
+  constructor(private route: ActivatedRoute, 
+              private MagazzinoService: MagazzinoService,
+              private router: Router) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
       this.getDatoMagazzino(id);
@@ -33,4 +35,7 @@ export class MagazzinoDettagliComponent implements OnInit {
     });
   }
 
+  onBack(): void {
+    this.router.navigate(['/products']);
+  }
 }

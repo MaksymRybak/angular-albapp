@@ -10,6 +10,7 @@ import { ListaMagazzinoComponent } from './magazzino/lista-magazzino/lista-magaz
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { MagazzinoDettagliComponent } from './magazzino/magazzino-dettagli/magazzino-dettagli.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { convertNumber } from './shared/convert-number';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     ListaMagazzinoComponent,
     ProductDetailsComponent,
     MagazzinoDettagliComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    convertNumber
   ],
   imports: [
     BrowserModule,
