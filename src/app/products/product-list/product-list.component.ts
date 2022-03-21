@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { StarEvent } from 'src/app/shared/star/star';
 import { IProduct } from '../product';
 import { ProductService } from '../product.service';
 
@@ -37,5 +38,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
   onFilterChange(): void {
     // let self = this;
     this.filteredProducts = this.products.filter((product: IProduct) => product.productName.indexOf(this.listFilter) >= 0);
+  }
+
+  onRatingClicked(starEvent: StarEvent): void {
+    this.pageTitle = 'Product List: ' + starEvent.getMessage();
   }
 }

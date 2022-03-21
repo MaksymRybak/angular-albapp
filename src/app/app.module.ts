@@ -12,6 +12,7 @@ import { MagazzinoDettagliComponent } from './magazzino/magazzino-dettagli/magaz
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { convertNumber } from './shared/convert-number';
 import { FormsModule } from '@angular/forms';
+import { StarComponent } from './shared/star/star.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     ProductDetailsComponent,
     MagazzinoDettagliComponent,
     ConvertToSpacesPipe,
-    convertNumber
+    convertNumber,
+    StarComponent
   ],
   imports: [
     BrowserModule,
