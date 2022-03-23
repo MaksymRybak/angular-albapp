@@ -25,6 +25,7 @@ Filosofia di Angular:
   Pipe - servono per formattare i dati a livello di template HTML 
   Rotte - servono per caricare diversi template (componenti) nella nostra SPA 
   Gestione dipendenze - noto come Dependency Injection (iniezzione delle dipendenze nei vari componenti angular)
+  Guardia - e' un concetto che serve per controllare l'accesso alle rotte di angular (navigazione angular)
   
 Progetto gestione prodotti:
   visualizzazione menu per poter aprire la pagina di benvenuto e la pagina elenco prodotti

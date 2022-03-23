@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ProductDetailGuard } from './product-detail.guard';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
       { path: 'products', component: ProductListComponent },
       {
         path: 'products/:id',
+        canActivate: [ProductDetailGuard],
         component: ProductDetailsComponent
       }
     ]),
