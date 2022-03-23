@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { convertNumber } from './convert-number';
+import { ConvertNumber } from './convert-number';
 import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
 import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
     ConvertToSpacesPipe,
-    convertNumber,
+    ConvertNumber,
     StarComponent
   ],
   imports: [
@@ -16,7 +16,7 @@ import { StarComponent } from './star/star.component';
   exports: [
     StarComponent,
     ConvertToSpacesPipe,
-    convertNumber,
+    ConvertNumber,
   ]
 })
 export class SharedModule { }
