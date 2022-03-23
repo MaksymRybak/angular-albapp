@@ -11,19 +11,19 @@ import { FormsModule } from '@angular/forms';
 import { ProductsModule } from './products/products.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { MagazzinoModule } from './magazzino/magazzino.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    ListaMagazzinoComponent,
-    MagazzinoDettagliComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     SharedModule,
+    MagazzinoModule,
     ProductsModule,
     AppRoutingModule
   ],
