@@ -7,7 +7,8 @@
         "scaffale": "54-e",
         "peso": "6 Kg",
         "materiale": "Acciao e legno",
-        "imballagio": false
+        "imballagio": false,
+        "starRating": 4.2
     },
     {
         "idMerce": 2,
@@ -17,7 +18,8 @@
         "scaffale": "12-s",
         "peso": "15 Kg",
         "materiale": "Acciao",
-        "imballagio": false
+        "imballagio": false,
+        "starRating": 5
     },
     {
         "idMerce": 3,
@@ -27,7 +29,8 @@
         "scaffale": "21-a",
         "peso": "4 Kg",
         "materiale": "Acciao e legno",
-        "imballagio": true
+        "imballagio": true,
+        "starRating": 3
     },
     {
         "idMerce": 4,
@@ -37,7 +40,8 @@
         "scaffale": "64-d",
         "peso": "5 Kg",
         "materiale": "Acciao e plastica",
-        "imballagio": true
+        "imballagio": true,
+        "starRating": 3.5
     },
     {
         "idMerce": 5,
@@ -47,6 +51,7 @@
         "scaffale": "82-a",
         "peso": "1 Kg",
         "materiale": "plastica",
-        "imballagio": false
+        "imballagio": false,
+        "starRating": 1.2
     }
   ]

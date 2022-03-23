@@ -13,9 +13,6 @@ export class MagazzinoDettagliComponent implements OnInit {
   errorMessage = '';
   datoMagazzino: Imagazzino | undefined;
 
-
-
-
   constructor(private route: ActivatedRoute, 
               private MagazzinoService: MagazzinoService,
               private router: Router) {
@@ -36,6 +33,6 @@ export class MagazzinoDettagliComponent implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/warehouse']);
   }
 }

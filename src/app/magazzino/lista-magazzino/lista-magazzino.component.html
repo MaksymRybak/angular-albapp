@@ -24,6 +24,7 @@
               <th>Quantità</th>
               <th>Capannone</th>
               <th>Scaffale</th>
+              <th>5 Star Rating</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,9 @@
               <td>{{ datoMagazzino.capannone }}</td>
               <td>{{ datoMagazzino.scaffale }}</td>
               <!-- <td>{{ datoMagazzino.scaffale | uppercase | convertNumber: '-'}}</td> -->
+              <td>
+                <app-star [rating]="datoMagazzino.starRating" (ratingClicked)="onRatingClicked($event)"></app-star>
+              </td>
             </tr>
           </tbody>
         </table>

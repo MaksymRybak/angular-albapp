@@ -7,4 +7,5 @@ export interface Imagazzino {
     peso: string;
     materiale: string;
     imballagio: boolean;
+    starRating: number;
 }
