@@ -10,7 +10,7 @@ export class CustomerComponent implements OnInit {
   customer: Customer;
 
   constructor() {
-    this.customer = new Customer();
+    this.customer = new Customer('', '');
    }
 
   ngOnInit(): void {
