@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { ListaMagazzinoComponent } from './magazzino/lista-magazzino/lista-magazzino.component';
 import { MagazzinoDettagliComponent } from './magazzino/magazzino-dettagli/magazzino-dettagli.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from './products/products.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { MagazzinoModule } from './magazzino/magazzino.module';
 import { CustomerComponent } from './home/customer/customer.component';
 import { NewProductComponent } from './home/new-product/new-product.component';
+import { NewCustomerReactiveComponent } from './home/new-customer-reactive/new-customer-reactive.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,13 @@ import { NewProductComponent } from './home/new-product/new-product.component';
     WelcomeComponent,
     CustomerComponent,
     NewProductComponent,
+    NewCustomerReactiveComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     MagazzinoModule,
     ProductsModule,

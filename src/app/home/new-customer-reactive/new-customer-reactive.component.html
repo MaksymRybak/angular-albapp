@@ -1,0 +1,158 @@
+<div class="card">
+  <div class="card-header">
+    Sign Up!
+  </div>
+
+  <div class="card-body">
+    <form (ngSubmit)="save()" [formGroup]="customerForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="firstNameId">First Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="firstNameId"
+                 name="firstName"
+                 type="text"
+                 placeholder="First Name (required)"
+                 formControlName="firstName"
+                 />
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="lastNameId">Last Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="lastNameId"
+                 name="lastName"
+                 type="text"
+                 placeholder="Last Name (required)"
+                 formControlName="lastName"/>
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div formGroupName="emailGroup">
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="emailId">Email</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="emailId"
+                   name="email"
+                   type="email"
+                   placeholder="Email (required)"
+                   formControlName="email"
+                   />
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="confirmEmailId">Confirm Email</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="confirmEmailId"
+                   type="email"
+                   placeholder="Confirm Email (required)"
+                   formControlName="confirmEmail"
+                   />
+            <span class="invalid-feedback">
+              
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="phoneId">Phone</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="phoneId"
+                 type="tel"
+                 placeholder="Phone"
+                 formControlName="phone"
+                 />
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label pt-0">Send Notifications</label>
+        <div class="col-md-8">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input 
+                     class="form-check-input"
+                     type="radio"
+                     value="email"
+                     formControlName="notification"
+                     >Email
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input 
+                     class="form-check-input"
+                     type="radio"
+                     value="text"
+                     formControlName="notification"
+                     >Text
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="ratingId">Rating</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="ratingId"
+                 type="number"
+                 min="1"
+                 max="10"
+                 name="rating"
+                 formControlName="rating"
+                 />
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input"
+                     id="sendCatalogId"
+                     type="checkbox"
+                     formControlName="sendCatalog">Send me your catalog
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="col-md-4">
+          <button class="btn btn-primary mr-3"
+                  type="submit"
+                  style="width:80px"
+                  [disabled]="!customerForm.valid"
+                  >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

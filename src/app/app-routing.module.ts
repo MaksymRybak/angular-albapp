@@ -7,11 +7,13 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { CustomerComponent } from './home/customer/customer.component';
 import { NewProductComponent } from './home/new-product/new-product.component';
+import { NewCustomerReactiveComponent } from './home/new-customer-reactive/new-customer-reactive.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'newProduct', component: NewProductComponent },
   { path: 'customer', component: CustomerComponent },
+  { path: 'customer-reactive', component: NewCustomerReactiveComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
 ];
