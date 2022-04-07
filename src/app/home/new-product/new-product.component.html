@@ -1,0 +1,114 @@
+<div class="card">
+  <div class="card-header">
+    Sign Up!
+  </div>
+
+  <div class="card-body">
+    <form #customerForm="ngForm" (ngSubmit)="saveProduct()">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="productNameId">Name product</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="productNameId"
+                 name="nameProduct"
+                 type="text"
+                 required
+                 minlength="3"
+                 [(ngModel)]="product.nameProduct"
+                 #nameProductVar="ngModel"
+                 [ngClass]="{'is-invalid': nameProductVar.touched && !nameProductVar.valid }"
+                 placeholder="Name product (required)"
+                 />
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="codeId">Code</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="codeId"
+                 name="code"
+                 type="text"
+                 required
+                 minlength="6"
+                 [(ngModel)]="product.code"
+                 #codeVar="ngModel"
+                 [ngClass]="{'is-invalid': codeVar.touched && !codeVar.valid }"
+                 placeholder="Code product (required)"/>
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div formGroupName="datagroup">
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="dataId">Data</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="dataId"
+                   name="data"
+                   type="text"
+                   maxlength="4"
+                   [(ngModel)]="product.data"
+                   #dataVar="ngModel"
+                   [ngClass]="{'is-invalid': dataVar.touched && !dataVar.valid }"
+                   placeholder="Data"/>
+            <span class="invalid-feedback">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="priceId">Price</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="priceId"
+                 type="number"
+                 placeholder="Price"
+                 />
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="ratingId">Rating</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="ratingId"
+                 type="number"
+                 min="1"
+                 max="10"
+                 name="rating"
+                 [(ngModel)]="product.rating"
+                 #ratingVar="ngModel"
+                 [ngClass]="{'is-invalid': ratingVar.touched && !ratingVar.valid }"
+                 />
+          <span class="invalid-feedback">
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-4">
+          <button class="btn btn-primary mr-3"
+                  type="submit"
+                  style="width:80px"
+                  [disabled]="customerForm.invalid"
+                  >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

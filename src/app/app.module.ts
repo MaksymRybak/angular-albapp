@@ -13,12 +13,14 @@ import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { MagazzinoModule } from './magazzino/magazzino.module';
 import { CustomerComponent } from './home/customer/customer.component';
+import { NewProductComponent } from './home/new-product/new-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     CustomerComponent,
+    NewProductComponent,
   ],
   imports: [
     BrowserModule,
