@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 // function saluta() {
 //   alert('Ciao');
@@ -71,10 +71,14 @@ function valueIsNotEmpty(c: AbstractControl): { [key: string]: boolean } | null 
 })
 export class NewCustomerReactiveComponent implements OnInit {
 
-  customerForm!: FormGroup;
+  customerForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
+  get addresses(): FormArray {
+    return this.customerForm.get('addresses') as FormArray;
+  }
+  
   ngOnInit(): void {
     this.customerForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
@@ -87,18 +91,48 @@ export class NewCustomerReactiveComponent implements OnInit {
       notification: 'email',
       rating: [null, ratingRange(1, 5)],
       sendCatalog: true,
+      addresses: this.fb.array([this.buildAddress()])
     });
 
     const phoneControl = this.customerForm.get('phone');
-    phoneControl?.valueChanges.subscribe(value => console.log(value));
+    phoneControl.valueChanges.subscribe(value => console.log(value));
 
-    phoneControl?.setValidators(Validators.minLength(5));
-    phoneControl?.updateValueAndValidity();
+    phoneControl.setValidators(Validators.minLength(5));
+    phoneControl.clearValidators();
+    phoneControl.updateValueAndValidity();
+  }
+
+  buildAddress(): FormGroup {
+    return this.fb.group({
+      addressType: 'home',
+      street1: ['', Validators.required],
+      street2: '',
+      city: '',
+      state: '',
+      zip: ''
+    });
+  }
+
+  addAddress(): void {
+    this.addresses.push(this.buildAddress());
   }
 
   save(): void {
     console.log(this.customerForm);
     console.log('Saved: ' + JSON.stringify(this.customerForm.value));
+  }
+
+  populateTestData(): void {
+    this.customerForm.patchValue({
+      firstName: 'Jack',
+      lastName: 'Harkness',
+      emailGroup: { 
+        email: 'jack@torchwood.com', 
+        confirmEmail: 'jack@torchwood.com' }
+      }
+    );
+
+    this.customerForm.get('phone').setValue('123456789');
   }
 
 }
